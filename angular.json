@@ -35,7 +35,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/style.scss"
             ],
             "scripts": []
           },
@@ -94,12 +94,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/style.scss"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }
