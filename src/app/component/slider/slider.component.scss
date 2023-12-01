@@ -36,6 +36,22 @@
       }
       .meta {
         font-size: 1.2rem;
+        .rating {
+          .pi {
+            color: orange;
+            margin-right: 10px;
+          }
+        }
+        .votes {
+          .pi {
+            margin-right: 10px;
+          }
+        }
+        .release-date {
+          .pi {
+            margin-right: 10px;
+          }
+        }
       }
       .description {
         font-size: 1.2rem;

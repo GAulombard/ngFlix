@@ -46,4 +46,8 @@ for responsivity in easy way
 
 [primeFlex](https://primeflex.org/installation)
 
+### install icon library prime ng
+
+[primeng icon](https://primeng.org/icons)
+
 
