@@ -25,3 +25,25 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## TUTO
+
+### eslint installation
+
+### modern-normalize installation
+
+to be sure all navigators will show your content the same way
+
+`npm install modern-normalize`
+
+and add to the top of styles.scss
+
+`@import '../node_modules/modern-normalize/modern-normalize.css';`
+
+### primeflex installation
+
+for responsivity in easy way
+
+[primeFlex](https://primeflex.org/installation)
+
+
