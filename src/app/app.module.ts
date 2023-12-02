@@ -10,7 +10,8 @@ import { MovieListComponent } from './pages/movie-list/movie-list.component'
 import { SliderComponent } from './component/slider/slider.component'
 import { HttpClientModule } from '@angular/common/http';
 import { BannerComponent } from './component/banner/banner.component';
-import { ShowItemComponent } from './component/show-item/show-item.component'
+import { ShowItemComponent } from './component/show-item/show-item.component';
+import { ShowDetailComponent } from './pages/show-detail/show-detail.component'
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ShowItemComponent } from './component/show-item/show-item.component'
     SliderComponent,
     BannerComponent,
     ShowItemComponent,
+    ShowDetailComponent,
   ],
   imports: [
     BrowserModule,
