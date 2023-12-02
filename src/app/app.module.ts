@@ -8,7 +8,9 @@ import { FooterComponent } from './shared/component/footer/footer.component'
 import { HomeComponent } from './pages/home/home.component'
 import { MovieListComponent } from './pages/movie-list/movie-list.component'
 import { SliderComponent } from './component/slider/slider.component'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { BannerComponent } from './component/banner/banner.component';
+import { ShowItemComponent } from './component/show-item/show-item.component'
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http'
     HomeComponent,
     MovieListComponent,
     SliderComponent,
+    BannerComponent,
+    ShowItemComponent,
   ],
   imports: [
     BrowserModule,
