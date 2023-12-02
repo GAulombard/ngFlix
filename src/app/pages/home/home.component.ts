@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { TvshowsService } from '../../services/tvshows.service';
 import { map } from 'rxjs';
-import { TvShow, mapToMovies } from '../../shared/component/types/tvshow';
+import { mapToMovies } from '../../shared/component/types/tvshow';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +16,7 @@ export class HomeComponent {
   ) {}
 
   //movies
+  popularMovies$ = this.movieService.getMoviesByType('popular');
   upcomingMovies$ = this.movieService.getMoviesByType('upcoming', 12);
   topRatedMovies$ = this.movieService.getMoviesByType('top_rated', 12);
 

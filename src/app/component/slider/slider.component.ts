@@ -23,15 +23,17 @@ import { Movie } from '../../shared/component/types/movie';
 })
 export class SliderComponent implements OnInit {
   @Input() slides: Movie[] = [];
+  @Input() isHeader = false;
 
-  constructor(private moviesService: MoviesService) {}
+  constructor() {}
 
-  movies$ = this.moviesService.getMoviesByType('popular');
   slideIndex = 0;
   imagesBaseUrl = imagesBaseUrl;
 
   ngOnInit(): void {
-    this.changeSlide();
+    if (!this.isHeader) {
+      this.changeSlide();
+    }
   }
 
   changeSlide() {

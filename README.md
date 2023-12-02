@@ -51,3 +51,6 @@ for responsivity in easy way
 [primeng icon](https://primeng.org/icons)
 
 
+### install prime ng
+
+npm install primeng
