@@ -4,6 +4,7 @@ import { MoviesService } from '../../services/movies.service';
 import { Movie } from '../../shared/component/types/movie';
 import { Observable } from 'rxjs';
 import { IMAGES_SIZES } from '../../constants/images-sizes';
+import { Video } from '../../shared/component/types/video';
 
 @Component({
   selector: 'app-show-detail',
@@ -13,6 +14,7 @@ import { IMAGES_SIZES } from '../../constants/images-sizes';
 export class ShowDetailComponent implements OnInit {
   showId = '';
   show$!: Observable<Movie>;
+  showVideos$!: Observable<Video[]>;
   imagesSizes = IMAGES_SIZES;
 
   constructor(
@@ -26,5 +28,6 @@ export class ShowDetailComponent implements OnInit {
     });
 
     this.show$ = this.moviesService.getMovieById(this.showId);
+    this.showVideos$ = this.moviesService.getMovieVideos(this.showId);
   }
 }
