@@ -1,0 +1,15 @@
+@import '../../../app/styles/colors';
+
+::ng-deep {
+  .p-tabview .p-tabview-nav {
+    justify-content: center;
+  }
+
+  .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    color: $primary-color;
+  }
+
+  .p-tabview .p-tabview-nav .p-tabview-ink-bar {
+    background-color: $primary-color;
+  }
+}
