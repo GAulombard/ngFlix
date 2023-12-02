@@ -1,13 +1,10 @@
 <div class="slider" *ngIf="movies$ | async as movies">
-  <div
-    class="slide"
-    *ngFor="let movie of movies.results; let movieIndex = index"
-  >
-    <ng-container *ngIf="movieIndex === slideIndex">
+  <ng-container *ngFor="let movie of movies.results; let movieIndex = index">
+    <div class="slide" *ngIf="movieIndex === slideIndex" @slideFade>
       <div class="slide-bg">
         <img
-          src="{{ 'https://image.tmdb.org/t/p/w1280/' + movie.backdrop_path }}"
-          alt=""
+          [src]=" imagesBaseUrl + 'w1280/' + movie.backdrop_path "
+          [alt]="movie.title"
         />
       </div>
       <div class="slide-pane">
@@ -24,11 +21,11 @@
           </div>
           <div class="release-date">
             <i class="pi pi-calendar"></i>
-            <span>{{ movie.release_date }}</span>
+            <span>{{ movie.release_date | date: 'yyyy' }}</span>
           </div>
         </div>
         <div class="description">{{ movie.overview }}</div>
       </div>
-    </ng-container>
-  </div>
+    </div>
+  </ng-container>
 </div>
