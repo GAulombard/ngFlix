@@ -1,10 +1,13 @@
 <a class="show-item" *ngIf="showItem">
   <div class="show-item-rating">
     <i class="pi pi-star"></i>
-    <span>{{ showItem.vote_average }}/10</span>
+    <span>{{ showItem.vote_average | number: '1.0-1' }}/10</span>
   </div>
   <div class="show-item-image">
-    <img [src]="imageBaseUrl + '/w500' + showItem.poster_path" [alt]="showItem.title" />
+    <img
+      [src]="imageBaseUrl + '/w500' + showItem.poster_path"
+      [alt]="showItem.title"
+    />
   </div>
-  <div class="show-item-title">{{showItem.title}}</div>
+  <div class="show-item-title">{{ showItem.title }}</div>
 </a>
