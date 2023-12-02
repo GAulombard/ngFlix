@@ -55,10 +55,9 @@
       <ng-container *ngIf="showVideos$ | async as showVideos">
         <div class="grid">
           <div class="col-4" *ngFor="let video of showVideos">
-            {{ video | json }}
-          </div>
-        </div></ng-container
-      >
+            <app-video-embed [key]="video.key"></app-video-embed>
+          </div></div
+      ></ng-container>
     </p-tabPanel>
     <p-tabPanel header="Photos">
       <p>
