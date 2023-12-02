@@ -1,5 +1,8 @@
-import { Component } from '@angular/core'
-import { MoviesService } from '../../services/movies.service'
+import { Component } from '@angular/core';
+import { MoviesService } from '../../services/movies.service';
+import { TvshowsService } from '../../services/tvshows.service';
+import { map } from 'rxjs';
+import { TvShow, mapToMovies } from '../../shared/component/types/tvshow';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +10,20 @@ import { MoviesService } from '../../services/movies.service'
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  constructor(private movieService: MoviesService) {}
+  constructor(
+    private movieService: MoviesService,
+    private tvShowsService: TvshowsService
+  ) {}
 
-  upcomingMovies$ = this.movieService.getMoviesByType('upcoming')
-  topRatedMovies$ = this.movieService.getMoviesByType('top_rated')
+  //movies
+  upcomingMovies$ = this.movieService.getMoviesByType('upcoming', 12);
+  topRatedMovies$ = this.movieService.getMoviesByType('top_rated', 12);
+
+  //tv shows
+  popularTvShows$ = this.tvShowsService
+    .getTvShowsByType('popular', 12)
+    .pipe(map(mapToMovies));
+  topRatedTvShows$ = this.tvShowsService
+    .getTvShowsByType('top_rated', 12)
+    .pipe(map(mapToMovies));
 }
