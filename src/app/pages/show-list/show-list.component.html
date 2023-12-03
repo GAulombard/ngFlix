@@ -9,7 +9,7 @@
   </div>
   <ng-container *ngIf="showList$ | async as showList">
     <div class="grid">
-      <div class="col-4" *ngFor="let movie of showList">
+      <div class="col-2" *ngFor="let movie of showList">
         <app-show-item [showItem]="movie"></app-show-item>
       </div>
     </div>
