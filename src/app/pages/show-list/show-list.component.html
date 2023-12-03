@@ -18,14 +18,14 @@
         <app-show-item [showItem]="movie" [type]="'movie'"></app-show-item>
       </div>
     </div>
-    <div class="grid">
-      <div class="col-12">
-        <p-paginator
-          (onPageChange)="onPageChange($event)"
-          [rows]="18"
-          [totalRecords]="showList.total_results"
-        ></p-paginator>
-      </div>
-    </div>
   </ng-container>
+  <div class="grid">
+    <div class="col-12">
+      <p-paginator
+        (onPageChange)="onPageChange($event)"
+        [rows]="18"
+        [totalRecords]="120"
+      ></p-paginator>
+    </div>
+  </div>
 </div>
