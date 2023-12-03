@@ -12,6 +12,7 @@ import { PaginatorState } from 'primeng/paginator';
 export class ShowListComponent implements OnInit {
   showList$!: Observable<MoviesDto>;
   searchValue = '';
+  total_records!: number;
 
   constructor(private moviesService: MoviesService) {}
 
@@ -21,6 +22,7 @@ export class ShowListComponent implements OnInit {
 
   getPagedShows(page: number, searchDefault?: string): void {
     this.showList$ = this.moviesService.searchMovies(page, searchDefault);
+    this.total_records = 120;
   }
 
   searchChange(): void {
