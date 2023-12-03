@@ -46,4 +46,12 @@ export class MoviesService {
       )
       .pipe(map((data) => data.cast));
   }
+
+  searchMovies(page: number, searchValue?: string) {
+    return this.http
+      .get<MoviesDto>(
+        `${this.apiUrl}/search/movie?query=${searchValue}&page=${page}&api_key=${this.apiKey}`
+      )
+      .pipe(map((data) => data.results));
+  }
 }

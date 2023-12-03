@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="grid">
+    <div class="col-12">
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText [(ngModel)]="searchValue" (change)="searchChange()"/>
+      </span>
+    </div>
+  </div>
+  <ng-container *ngIf="showList$ | async as showList">
+    <div class="grid">
+      <div class="col-4" *ngFor="let movie of showList">
+        <app-show-item [showItem]="movie"></app-show-item>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core'
 import { Movie } from '../../shared/component/types/movie'
-import { imagesBaseUrl } from '../../constants/images-sizes'
+import { IMAGES_SIZES, imagesBaseUrl } from '../../constants/images-sizes'
 
 @Component({
   selector: 'app-show-item',
@@ -9,5 +9,6 @@ import { imagesBaseUrl } from '../../constants/images-sizes'
 })
 export class ShowItemComponent {
   @Input() showItem: Movie | null = null
+  imageSizes = IMAGES_SIZES;
   imageBaseUrl = imagesBaseUrl
 }
