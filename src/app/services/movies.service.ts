@@ -21,7 +21,7 @@ export class MoviesService {
       .pipe(map((data) => data.results.slice(0, count)));
   }
 
-  getMoviesByGenres() {
+  getMoviesGenres() {
     return this.http
       .get<GenresDto>(`${this.apiUrl}/genre/movie/list?api_key=${this.apiKey}`)
       .pipe(map((data) => data.genres));
