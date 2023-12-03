@@ -9,4 +9,5 @@ import { Movie } from '../../shared/component/types/movie';
 export class BannerComponent {
   @Input() shows: Movie[] = [];
   @Input() title: string = '';
+  @Input() type: string ='';
 }

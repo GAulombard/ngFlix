@@ -6,7 +6,7 @@ import { ShowListComponent } from './pages/show-list/show-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'detail/:id', component: ShowDetailComponent },
+  { path: 'detail/:type/:id', component: ShowDetailComponent },
   { path: 'list', component: ShowListComponent },
 ];
 
