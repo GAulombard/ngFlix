@@ -103,5 +103,9 @@
 </ng-template>
 
 <ng-container *ngIf="showSimilars$ | async as showSimilars">
-  <app-banner [title]="similarTitle" [shows]="showSimilars"></app-banner
+  <app-banner
+    [title]="similarTitle"
+    [shows]="showSimilars"
+    [type]="type"
+  ></app-banner
 ></ng-container>
