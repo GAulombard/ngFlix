@@ -14,8 +14,17 @@
   </div>
   <ng-container *ngIf="showList$ | async as showList">
     <div class="grid">
-      <div class="col-2" *ngFor="let movie of showList">
+      <div class="col-2" *ngFor="let movie of showList.results">
         <app-show-item [showItem]="movie" [type]="'movie'"></app-show-item>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-12">
+        <p-paginator
+          (onPageChange)="onPageChange($event)"
+          [rows]="18"
+          [totalRecords]="showList.total_results"
+        ></p-paginator>
       </div>
     </div>
   </ng-container>

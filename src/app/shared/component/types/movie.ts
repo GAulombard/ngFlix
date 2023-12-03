@@ -28,3 +28,7 @@ export type Genres = {
   id: string;
   name: string;
 };
+
+export type GenresDto = {
+  genres: Genres[];
+};

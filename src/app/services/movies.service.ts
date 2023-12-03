@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Movie, MoviesDto } from '../shared/component/types/movie';
+import { GenresDto, Movie, MoviesDto } from '../shared/component/types/movie';
 import { map } from 'rxjs';
 import { VideoDto } from '../shared/component/types/video';
 import { ImageDto } from '../shared/component/types/image';
@@ -21,6 +21,12 @@ export class MoviesService {
       .pipe(map((data) => data.results.slice(0, count)));
   }
 
+  getMoviesByGenres() {
+    return this.http
+      .get<GenresDto>(`${this.apiUrl}/genre/movie/list?api_key=${this.apiKey}`)
+      .pipe(map((data) => data.genres));
+  }
+
   getMovieById(id: string) {
     return this.http.get<Movie>(
       `${this.apiUrl}/movie/${id}?api_key=${this.apiKey}`
@@ -38,7 +44,7 @@ export class MoviesService {
       .get<MoviesDto>(
         `${this.apiUrl}/movie/${id}/similar?api_key=${this.apiKey}`
       )
-      .pipe(map((data) => data.results.slice(0,12)));
+      .pipe(map((data) => data.results.slice(0, 12)));
   }
 
   getImageVideos(id: string) {
@@ -56,10 +62,9 @@ export class MoviesService {
   }
 
   searchMovies(page: number, searchValue?: string) {
-    return this.http
-      .get<MoviesDto>(
-        `${this.apiUrl}/search/movie?query=${searchValue}&page=${page}&api_key=${this.apiKey}`
-      )
-      .pipe(map((data) => data.results));
+    const uri = searchValue ? 'search/movie' : 'movie/popular';
+    return this.http.get<MoviesDto>(
+      `${this.apiUrl}/${uri}?query=${searchValue}&page=${page}&api_key=${this.apiKey}`
+    );
   }
 }
