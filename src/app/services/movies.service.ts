@@ -33,6 +33,14 @@ export class MoviesService {
       .pipe(map((data) => data.results));
   }
 
+  getSimilarMovies(id: string) {
+    return this.http
+      .get<MoviesDto>(
+        `${this.apiUrl}/movie/${id}/similar?api_key=${this.apiKey}`
+      )
+      .pipe(map((data) => data.results.slice(0,12)));
+  }
+
   getImageVideos(id: string) {
     return this.http
       .get<ImageDto>(`${this.apiUrl}/movie/${id}/images?api_key=${this.apiKey}`)

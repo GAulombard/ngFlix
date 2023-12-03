@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core'
-import { Movie } from '../../shared/component/types/movie'
+import { Component, Input } from '@angular/core';
+import { Movie } from '../../shared/component/types/movie';
 
 @Component({
   selector: 'app-banner',
@@ -7,6 +7,6 @@ import { Movie } from '../../shared/component/types/movie'
   styleUrl: './banner.component.scss',
 })
 export class BannerComponent {
-  @Input() shows: Movie[] = []
-  @Input() title: string = ''
+  @Input() shows: Movie[] = [];
+  @Input() title: string = '';
 }

@@ -101,3 +101,7 @@
 <ng-template #defaultActorPhoto>
   <img src="../../../assets/images/unknown-actor.jpg" alt="unknown-actor" />
 </ng-template>
+
+<ng-container *ngIf="showSimilars$ | async as showSimilars">
+  <app-banner [title]="'Similar Movies'" [shows]="showSimilars"></app-banner
+></ng-container>

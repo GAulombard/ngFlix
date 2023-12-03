@@ -16,6 +16,7 @@ import { Actor } from '../../shared/component/types/credit';
 export class ShowDetailComponent implements OnInit {
   showId = '';
   show$!: Observable<Movie>;
+  showSimilars$!: Observable<Movie[]>;
   showVideos$!: Observable<Video[]>;
   showImages$!: Observable<Image[]>;
   showCasts$!: Observable<Actor[]>;
@@ -35,5 +36,6 @@ export class ShowDetailComponent implements OnInit {
     this.showVideos$ = this.moviesService.getMovieVideos(this.showId);
     this.showImages$ = this.moviesService.getImageVideos(this.showId);
     this.showCasts$ = this.moviesService.getMovieCasts(this.showId);
+    this.showSimilars$ = this.moviesService.getSimilarMovies(this.showId);
   }
 }
