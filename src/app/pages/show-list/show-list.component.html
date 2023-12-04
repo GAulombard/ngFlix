@@ -15,7 +15,7 @@
   <ng-container *ngIf="showList$ | async as showList">
     <div class="grid">
       <div class="col-2" *ngFor="let movie of showList.results">
-        <app-show-item [showItem]="movie" [type]="'movie'"></app-show-item>
+        <app-show-item [showItem]="movie" [type]="type"></app-show-item>
       </div>
     </div>
   </ng-container>

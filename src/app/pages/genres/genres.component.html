@@ -19,4 +19,13 @@
       </div>
     </div>
   </ng-container>
+  <div class="grid">
+    <div class="col-12">
+      <p-paginator
+        (onPageChange)="onPageChange($event)"
+        [rows]="18"
+        [totalRecords]="total_records"
+      ></p-paginator>
+    </div>
+  </div>
 </div>
