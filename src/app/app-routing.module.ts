@@ -8,7 +8,7 @@ import { GenresComponent } from './pages/genres/genres.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'detail/:type/:id', component: ShowDetailComponent },
-  { path: 'list', component: ShowListComponent },
+  { path: 'list/:type', component: ShowListComponent },
   { path: 'genres', component: GenresComponent },
   { path: 'genres/:genreId', component: GenresComponent },
 ];

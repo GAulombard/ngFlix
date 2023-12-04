@@ -1,4 +1,4 @@
-import { Movie } from './movie';
+import { Movie, MoviesDto } from './movie';
 
 export type TvShow = {
   id: number;
@@ -39,5 +39,14 @@ export function mapToMovie(tvshow: TvShow): Movie {
     title: tvshow.name,
     original_title: tvshow.original_name,
     release_date: tvshow.first_air_date,
+  };
+}
+
+export function mapToMoviesDto(tvshowDto: TvShowDto): MoviesDto {
+  return {
+    results: tvshowDto.results.map(mapToMovie),
+    total_pages: tvshowDto.total_pages,
+    total_results: tvshowDto.total_results,
+    page: tvshowDto.page,
   };
 }
