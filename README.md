@@ -48,9 +48,11 @@ for responsivity in easy way
 
 ### install icon library prime ng
 
+`npm install primeicons`
+
 [primeng icon](https://primeng.org/icons)
 
 
 ### install prime ng
 
-npm install primeng
+`npm install primeng`
