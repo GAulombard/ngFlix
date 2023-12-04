@@ -56,3 +56,17 @@ for responsivity in easy way
 ### install prime ng
 
 `npm install primeng`
+
+
+### deploy
+
+npm run build -> fix error budget
+folder "dist" to upload
+
+use fileZilla to upload to standard host using ftp
+
+deploy to github pages
+
+- create repository with readmefile and upload the dist folder
+- go to settings -> pages -> githubActions -> use static HTML and configure -> commit changes
+- fix issue with the domain name -> in the index.html change base href to "/ngflix/"
